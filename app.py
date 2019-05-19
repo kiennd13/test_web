@@ -114,7 +114,7 @@ def create():
         mongo.save_file(profile_image.filename,profile_image)
         mongo.db.upfile.insert({"username":request.form.get('username'),"profile_image_name": profile_image.filename})
     
-    return "Done!"
+    return redirect(url_for("memory"))
 
 @app.route('/file/<filename>')
 def file(filename):
