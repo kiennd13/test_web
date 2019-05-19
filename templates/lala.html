@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Kien's world!</title>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link href="/static/css/lala.css" type="text/css" rel="stylesheet">
+        <link href="/static/css/layout.css" type="text/css" rel="stylesheet">
+    </head>
+    <body>
+        
+        <div id="wrapper">
+            <div id="menu_area" class="menu-area">
+                    <div class="container">
+                        <div class="row">
+                            <nav class="navbar navbar-light navbar-expand-lg mainmenu">
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                    <ul class="navbar-nav mr-auto" >
+                                        <li class="active"><a href="/">Home <span class="sr-only">(current)</span></a></li>
+                                        <li class="dropdown"> 
+                                            <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Memory</a>
+                                            <ul class=" " aria-labelledby="navbarDropdown">
+                                            <li><a href="/memory">Image</a></li>
+                                            <li><a href="/upfile">Upload image</a></li>
+                                            </ul>
+                                        </li>      
+                                        <li class="dropdown">
+                                            <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Football</a>
+                                            <ul class=" " aria-labelledby="navbarDropdown">
+                                            <li><a href="/man_united">Manchester United</a></li>
+                                            
+                                            </ul>
+                                        </li>
+                                        <li><a href="/feeling">Feeling</a></li>
+                                        <li><a href="/about">About us</a></li>
+                                    </ul>
+                                    <div class="navbar-nav">
+                                        <a class="nav-item nav-link" href="/register">Register</a>
+                                    </div>
+                                    <div class="navbar-nav">
+                                        <a class="nav-item nav-link" href="/logout">Logout</a>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            <div id="lead-banner">
+                
+                <div id="text">
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                          {% for category, message in messages %}
+                            <div class="alert alert-{{ category }}">
+                              {{ message }}
+                            </div>
+                          {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                    <h3>My hobbies </h3>
+                </div>
+                <img src="https://i.ytimg.com/vi/15VbNYUiTGk/maxresdefault.jpg" alt="Bikes!"  >
+            </div>
+            <div id="footer-banner">
+                <div id="text" style="padding-top: 150px; ">
+                    <h3>Where can I keep the memories</h3>
+                </div>
+                <img src="/static/images/c.jpg" alt="pic of bike">
+            </div>
+            <div id="diary-banner">          
+                <div id="text">
+                    <h3>And something i can't tell to anyone</h3>
+                </div>
+                <img src="/static/images/e.jpg" alt="diary">
+            </div>
+        </div>
+            
+    </body>
+</html>     

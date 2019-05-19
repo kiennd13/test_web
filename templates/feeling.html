@@ -1,0 +1,89 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Kien's World</title>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link href="/static/css/lala.css" type="text/css" rel="stylesheet">
+        <link href="/static/css/layout.css" type="text/css" rel="stylesheet">
+        <link href="/static/css/feeling.css" type="text/css" rel="stylesheet">
+    </head>
+<body>
+        <div id="wrapper">
+                <div id="menu_area" class="menu-area">
+                        <div class="container">
+                            <div class="row">
+                                <nav class="navbar navbar-light navbar-expand-lg mainmenu">
+                                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                    </button>
+                                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                        <ul class="navbar-nav mr-auto" >
+                                            <li class="active"><a href="/">Home <span class="sr-only">(current)</span></a></li>
+                                            <li class="dropdown"> 
+                                                <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Memory</a>
+                                                <ul class=" " aria-labelledby="navbarDropdown">
+                                                <li><a href="/memory">Image</a></li>
+                                                <li><a href="/upfile">Upload image</a></li>
+                                                </ul>
+                                            </li>      
+                                            <li class="dropdown">
+                                                <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Football</a>
+                                                <ul class=" " aria-labelledby="navbarDropdown">
+                                                <li><a href="/man_united">Manchester United</a></li>
+                                                
+                                                </ul>
+                                            </li>
+                                            <li><a href="/feeling">Feeling</a></li>
+                                            <li><a href="/about">About us</a></li>
+                                        </ul>
+                                        <div class="navbar-nav">
+                                            <a class="nav-item nav-link" href="/register">Register</a>
+                                        </div>
+                                        <div class="navbar-nav">
+                                            <a class="nav-item nav-link" href="/logout">Logout</a>
+                                        </div>
+                                    </div>
+                                </nav>
+                            </div>
+                        </div>
+                </div>
+        <main id="blog" role="main" class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    {% for post in posts %}
+                        <article class="media content-section">
+                          <div class="media-body">
+                            <div class="article-metadata">
+                              <a class="mr-2" href="#">{{post.author}}</a>
+                              <small class="text-muted">{{post.time}}</small>
+                            </div>
+                            <p class="article-content">{{post.content}}</p>
+                          </div>
+                        </article>
+                    {% endfor %}
+                </div>
+              <div class="col-md-4">
+                <div class="content-blog">
+                  
+                  <p class='text-muted'>
+                    <ul class="list-unstyled">
+                        <li>
+                            <form method="POST">
+                                <div class="input-group form-group">
+                                    <input type="text" name="blog" class="form-control" placeholder="What are you thinking?">
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" value="Submit" class="btn float-left login_btn">
+                                </div>
+                            </form>    
+                        </li>
+                    </ul>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </main>
+          </div>
+          </body>
