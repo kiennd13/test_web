@@ -105,7 +105,7 @@ mongo = PyMongo(app)
 @app.route('/upfile')
 def upfile():
    
-    return render_template('upfile.html')
+    return render_template('upfile.html',updater = session["username"])
 
 @app.route('/create', methods=["POST"])
 def create():
